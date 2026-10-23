@@ -34,5 +34,6 @@ plot_rich <- function(rich_df){
     geom_col(colour = "white") +
     scale_fill_manual(values = c("Grazed" = "darkorange", "Not grazed" = "darkgreen")) +
     labs(x = "Plot", y = "Species richness",  fill = "Management") +
-    theme_minimal()
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
 }
