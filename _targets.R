@@ -1,5 +1,6 @@
 # Load packages required to define the pipeline:
 library(targets)
+library(tarchetypes)
 
 # Set target options:
 tar_option_set(
@@ -45,5 +46,10 @@ list(
   tar_target(
     name = veg_fig,
     command = plot_rich(veg_managed)
-  )
+  ),
+  
+  # render ms
+  tar_quarto(
+    name = manuscript, 
+    path = "astonishing_vegetation.qmd")
 )
