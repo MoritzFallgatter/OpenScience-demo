@@ -11,10 +11,10 @@ veg_managed|stem|70bebb4965dc7bdb|50169288ca75c729|9c5889fbdadc7cfd|-752748084||
 veg_richness|stem|b164242ddb2a9182|56cb12b5079fcc69|73a14b10b2be09e8|-1505047465||t20749.6570144519s|s271b|271|rds|local|vector|||0.032||
 vis_rich|function|9e44a94c3874a745
 veg_plot|stem|1d2fc5720b62ff8f|2d03743d5fd5109b|2ddde429671a4639|1332146679||t20749.65726978s|s264287b|264287|rds|local|vector|||0.113||
-veg_fig|stem|f9472a45de4a910d|f45b1a4430fdc945|3bc963e4d83dfb95|1637083948||t20749.6610458869s|s264282b|264282|rds|local|vector|||0.114||
 read|function|f3c10bae379f1952
-plot_rich|function|9e44a94c3874a745
+plot_rich|function|d94065a56bafd990
 clean|function|12983f7b9dc1bf81
 management|function|860334b1f125d6f7
 calc_rich|function|311a185529f190bc
-manuscript|stem|44fff61984169aaf|68eece5e24bd7060|2c530c1562a7fbd1|-1793997187|astonishing_vegetation_files*astonishing_vegetation.html*astonishing_vegetation.qmd|t20749.6651216772s|s903858b|903858|file|local|vector|||5.119||
+veg_fig|stem|56a3cbdd67dbbb18|f45b1a4430fdc945|f58d49f7f7920cf2|1637083948||t20749.736319247s|s265166b|265166|rds|local|vector|||0.098||
+manuscript|stem|c53d796c93fc3394|ba28ea9fd1c88e6a|195bbcb62eb6bb8f|-1793997187|astonishing_vegetation_files*astonishing_vegetation.html*astonishing_vegetation.qmd|t20749.7363959936s|s964031b|964031|file|local|vector|||6.598||

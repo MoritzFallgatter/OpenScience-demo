@@ -1,12 +1,29 @@
 ---
-title: "Data visualisation"
+title: "Vegetation data and its richness"
 author: "Noa Terracina"
 format: html
 editor: visual
 ---
 
-Read the data
+```{r}
+#| label: load the target
+#| include: false
+library(targets)
+```
 
 ```{r}
+#| label: load the data
+#| echo: false
+tar_load(veg_managed)
 
+```
+
+Data from vegetation plots recorded in 2025 in the Franzigmark, Sachsen-Anhalt, Germany.\
+There is `{r} nrow(veg_managed)` plots, the half is grazed and the other is not.
+
+```{r}
+#| label: load some figure
+#| echo: false
+
+tar_read(veg_fig)
 ```
