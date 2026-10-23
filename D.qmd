@@ -1,0 +1,12 @@
+---
+title: "Data visualisation"
+author: "Noa Terracina"
+format: html
+editor: visual
+---
+
+Read the data
+
+```{r}
+
+```
