@@ -20,7 +20,6 @@ calc_rich <- function(df){
   pivot_longer(everything(),
                  names_to = "plot", values_to = "richness")
 }
-# What about shrub layer?
 
 # add the grazing factor
 management <- function(df, grazed){
@@ -37,4 +36,69 @@ plot_rich <- function(rich_df){
     labs(x = "Plot", y = "Species richness",  fill = "Management") +
     theme_minimal() +
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
+}
+
+check_management_effect <- function(data) {
+  
+  data <- data |>
+    dplyr::mutate(
+      group = factor(group, levels = c("Not grazed", "Grazed"))
+    )
+  
+  model <- glm(
+    richness ~ group,
+    data = data,
+    family = poisson(link = "log")
+  )
+  
+  return(summary(model))
+}
+
+
+plot_management_richness <- function(data) {
+  
+  data <- data |>
+    mutate(group = factor(group,
+                          levels = c("Not grazed", "Grazed")))
+  
+  # Fit Poisson GLM
+  model <- glm(
+    richness ~ group,
+    data = data,
+    family = poisson(link = "log")
+  )
+  
+  # Extract model results
+  results <- summary(model)$coefficients
+  
+  estimate <- results["groupGrazed", "Estimate"]
+  p_value  <- results["groupGrazed", "Pr(>|z|)"]
+  
+  # Annotation
+  annotation <- paste0(
+    "GLM estimate = ", round(estimate, 3),
+    "\np = ", format.pval(p_value, digits = 3)
+  )
+  
+  # Plot
+  ggplot(data, aes(x = group, y = richness, fill = group)) +
+    geom_boxplot(alpha = 0.6) +
+    geom_jitter(width = 0.1, alpha = 0.6) +
+    annotate(
+      "text",
+      x = 1.5,
+      y = Inf,
+      label = annotation,
+      vjust = 1.5,
+      size = 4
+    ) +
+    labs(
+      x = "Management",
+      y = "Species richness"
+    ) +
+    scale_y_continuous(
+      expand = expansion(mult = c(0.05, 0.2))
+    ) +
+    theme_bw() +
+    theme(legend.position = "none")
 }
