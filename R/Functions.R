@@ -20,6 +20,7 @@ calc_rich <- function(df){
   pivot_longer(everything(),
                  names_to = "plot", values_to = "richness")
 }
+# What about shrub layer?
 
 # add the grazing factor
 management <- function(df, grazed){
