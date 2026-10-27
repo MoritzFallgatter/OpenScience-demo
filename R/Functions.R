@@ -38,22 +38,6 @@ plot_rich <- function(rich_df){
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
 }
 
-check_management_effect <- function(data) {
-  
-  data <- data |>
-    dplyr::mutate(
-      group = factor(group, levels = c("Not grazed", "Grazed"))
-    )
-  
-  model <- glm(
-    richness ~ group,
-    data = data,
-    family = poisson(link = "log")
-  )
-  
-  return(summary(model))
-}
-
 
 plot_management_richness <- function(data) {
   

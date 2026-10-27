@@ -48,12 +48,6 @@ list(
     command = plot_rich(veg_managed)
   ),
   
-  # management effect
-  tar_target(
-    name = veg_management_effect,
-    command = check_management_effect(veg_managed)
-  ),
-  
   # plot management effect
   tar_target(
     name = veg_management_effect_plot,
